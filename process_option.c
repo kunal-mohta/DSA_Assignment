@@ -12,21 +12,31 @@ int total_list_count = 0;
 
 void initialize_main_list () {
 	int i;
+	main_list[2] = -1; // head
 	for (i = 0; i < MAIN_LIST_LEN - 3; i += 3) {
 		main_list[i + 1] = i + 3;
 	}
-	main_list[i + 1] = -1;
+	main_list[i + 1] = -1; // tail
 }
 
 void process_option (int option) {
 	switch (option) {
 		case 1: printf("\nThe sequence number of the newly created list is: %d", total_list_count+1);
-			printf("\nEnter key value to be inserted in the newly created list-%d: ", total_list_count+1);
-			int new_key;
-			scanf("%d", &new_key);
-			create_new_list(total_list_count, new_key);
-			break;
-		case 2: break;
+				printf("\nEnter key value to be inserted in the newly created list-%d: ", total_list_count+1);
+				int new_key;
+				scanf("%d", &new_key);
+				create_new_list(total_list_count, new_key);
+				break;
+
+		case 2: printf("\nList you want to insert in: ");
+				int seq_no;
+				scanf("%d", &seq_no);
+				printf("\nEnter the key value: ");
+				int key;
+				scanf("%d", &key);
+				insert_elem_in_list(seq_no, key);
+				break;
+
 		case 3: break;
 		case 4: break;
 		case 5: break;
@@ -38,5 +48,12 @@ void process_option (int option) {
 			break;
 	}
 
-	printf("\n\n%d\n\n", main_list[0]);
+
+	int i = lists_index_no[0];
+	int j = i;
+	while (j != -1) {
+		printf("\n\n%d", main_list[j]);
+		j = main_list[i+1];
+		i = j;
+	}
 }
