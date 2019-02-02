@@ -7,7 +7,7 @@
 
 int free_index = 0;
 int main_list[MAIN_LIST_LEN];
-int lists_index_no[LIST_COUNT]; // nth index => (n+1)th seq no
+int lists_index_no[LIST_COUNT] = {-1, -1, -1, -1, -1}; // nth index => (n+1)th seq no
 int total_list_count = 0;
 
 void initialize_main_list () {
@@ -45,8 +45,15 @@ void process_option (int option) {
 				scanf("%d", &key_delete);
 				delete_elem_in_list(seq_no_delete, key_delete);
 				break;
-		case 4: break;
-		case 5: break;
+
+		case 4: printf("\nTotal number of nodes in all lists are %d", count_total_elems());
+				break;
+
+		case 5: printf("\nEnter the list number: ");
+				int seq_no_count;
+				scanf("%d", &seq_no_count);
+				printf("\nTotal number of nodes in list-%d are %d", seq_no_count, count_list_elems(seq_no_count));
+				break;
 		case 6: break;
 		case 7: break;
 		case 8: break;
