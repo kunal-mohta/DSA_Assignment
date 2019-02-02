@@ -54,8 +54,11 @@ void process_option (int option) {
 				scanf("%d", &seq_no_count);
 				printf("\nTotal number of nodes in list-%d are %d", seq_no_count, count_list_elems(seq_no_count));
 				break;
-		case 6: break;
-		case 7: break;
+		case 6: display_all_lists();
+				break;
+
+		case 7: display_free_list();
+				break;
 		case 8: break;
 
 		default: printf("\nFAILURE: INVALID OPTION\n");
