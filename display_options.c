@@ -1,3 +1,5 @@
+#include<stdio.h>
+
 void display_options () {
 	printf("\nOPTIONS:\n");
 	printf("1. Create a new list\n");
