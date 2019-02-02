@@ -16,12 +16,10 @@ void insert_elem_in_list (int seq_no, int key) {
 		int next_index = get_next_index(curr_index);
 		int prev_index = get_prev_index(curr_index);
 
-		while (key <= get_key(curr_index)) {
+		while (curr_index != -1 && key <= get_key(curr_index)) {
 			prev_index = curr_index;
 			curr_index = next_index;
 			next_index = get_next_index(curr_index);
-
-			if (curr_index == -1) break;
 		}
 
 		// insert in the beginning

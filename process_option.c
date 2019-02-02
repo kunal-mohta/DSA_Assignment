@@ -29,15 +29,22 @@ void process_option (int option) {
 				break;
 
 		case 2: printf("\nList you want to insert in: ");
-				int seq_no;
-				scanf("%d", &seq_no);
+				int seq_no_insert;
+				scanf("%d", &seq_no_insert);
 				printf("\nEnter the key value: ");
-				int key;
-				scanf("%d", &key);
-				insert_elem_in_list(seq_no, key);
+				int key_insert;
+				scanf("%d", &key_insert);
+				insert_elem_in_list(seq_no_insert, key_insert);
 				break;
 
-		case 3: break;
+		case 3: printf("\nList you want to delete from: ");
+				int seq_no_delete;
+				scanf("%d", &seq_no_delete);
+				printf("\nEnter the key value: ");
+				int key_delete;
+				scanf("%d", &key_delete);
+				delete_elem_in_list(seq_no_delete, key_delete);
+				break;
 		case 4: break;
 		case 5: break;
 		case 6: break;
@@ -48,12 +55,12 @@ void process_option (int option) {
 			break;
 	}
 
-
-	int i = lists_index_no[0];
+	/*int i = free_index;
+//	int i = lists_index_no[0];
 	int j = i;
 	while (j != -1) {
-		printf("\n\n%d", main_list[j]);
+		printf("\n\n%d", j);
 		j = main_list[i+1];
 		i = j;
-	}
+	}*/
 }
