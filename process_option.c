@@ -7,25 +7,25 @@
 
 int free_index = 0;
 int main_list[MAIN_LIST_LEN];
-int lists_seq_no[LIST_COUNT];
+int lists_index_no[LIST_COUNT]; // nth index => (n+1)th seq no
+int total_list_count = 0;
 
 void initialize_main_list () {
 	int i;
 	for (i = 0; i < MAIN_LIST_LEN - 3; i += 3) {
-		main_list[i + 1] = i + 1 + 3;
+		main_list[i + 1] = i + 3;
 	}
 	main_list[i + 1] = -1;
-
-	push_free_list(6);
-	push_free_list(12);
-	printf("\n\n%d\n\n", free_index);
-	pop_free_list();
-	printf("\n\n%d\n\n", free_index);
 }
 
 void process_option (int option) {
 	switch (option) {
-		case 1: break;
+		case 1: printf("\nThe sequence number of the newly created list is: %d", total_list_count+1);
+			printf("\nEnter key value to be inserted in the newly created list-%d: ", total_list_count+1);
+			int new_key;
+			scanf("%d", &new_key);
+			create_new_list(total_list_count, new_key);
+			break;
 		case 2: break;
 		case 3: break;
 		case 4: break;
@@ -37,4 +37,6 @@ void process_option (int option) {
 		default: printf("\nFAILURE: INVALID OPTION\n");
 			break;
 	}
+
+	printf("\n\n%d\n\n", main_list[0]);
 }

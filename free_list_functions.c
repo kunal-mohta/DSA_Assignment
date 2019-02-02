@@ -1,3 +1,5 @@
+#include<stdio.h>
+
 #include "process_option.h"
 #include "main_list_functions.h"
 
