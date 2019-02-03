@@ -6,11 +6,14 @@ int main () {
 	int user_input = -1;
 	initialize_main_list();
 
-	while (user_input != 0) {
+	while (1) {
 		display_options();
 		printf("Select an option: ");
 		scanf("%d", &user_input);
-		process_option(user_input);
+		if (user_input != 0)
+			process_option(user_input);
+		else
+			break;
 	}
 	printf("\nTHANK YOU!\nEXITING PROGRAM...\n");
 }

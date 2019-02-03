@@ -47,8 +47,13 @@ void process_option (int option) {
 					int key_insert;
 					scanf("%d", &key_insert);
 
-					if (lists_index_no[seq_no_insert-1] == -1)
+					if (lists_index_no[seq_no_insert-1] == -1) {
 						create_new_list(seq_no_insert-1, key_insert);
+
+						// check if working
+						if (lists_index_no[seq_no_insert-1] != -1)
+							total_list_count--; // because inc in create_new_list
+					}
 					else
 						insert_elem_in_list(seq_no_insert, key_insert);
 				}
