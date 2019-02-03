@@ -1,9 +1,12 @@
-#basic: main.c display_options.c process_option.c options.h
-#	gcc main.c display_options.c process_option.c main_list_functions.c free_list_functions.c
-#	@echo "\nCOMPILED SUCCESSFULLY...\nEXECUTING PROGRAM..."
-#	@./a.out
+src = $(wildcard *.c)
+obj = $(src:%.c=%.o)
 
-medium: *.c *.h
-	gcc *.c
+run_assign: $(src) $(obj)
+	@echo "\nCOMPILING..."
+	@gcc $(src)
 	@echo "\nCOMPILED SUCCESSFULLY...\nEXECUTING PROGRAM..."
 	@./a.out
+
+clean:
+	@rm *.out
+	@rm *.o

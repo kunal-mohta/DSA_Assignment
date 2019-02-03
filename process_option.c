@@ -75,7 +75,10 @@ void process_option (int option) {
 		case 5: printf("\nEnter the list number: ");
 				int seq_no_count;
 				scanf("%d", &seq_no_count);
-				printf("\nTotal number of nodes in list-%d are %d", seq_no_count, count_list_elems(seq_no_count));
+				if (seq_no_count <= LIST_COUNT && lists_index_no[seq_no_count - 1] != -2)
+					printf("\nTotal number of nodes in list-%d are %d", seq_no_count, count_list_elems(seq_no_count));
+				else
+					printf("\nFAILURE: LIST NOT FOUND");
 				break;
 		case 6: display_all_lists();
 				break;
