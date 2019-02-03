@@ -2,7 +2,7 @@
 #include "execution_functions.h"
 #include "free_list_functions.h"
 
-#define MAIN_LIST_LEN 15
+#define MAIN_LIST_LEN 90
 #define LIST_COUNT 5
 
 int free_index = 0;
