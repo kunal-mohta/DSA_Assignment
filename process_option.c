@@ -2,7 +2,7 @@
 #include "execution_functions.h"
 #include "free_list_functions.h"
 
-#define MAIN_LIST_LEN 90
+#define MAIN_LIST_LEN 15
 #define LIST_COUNT 5
 
 int free_index = 0;
@@ -59,7 +59,9 @@ void process_option (int option) {
 
 		case 7: display_free_list();
 				break;
-		case 8: break;
+
+		case 8: defrag();
+				break;
 
 		default: printf("\nFAILURE: INVALID OPTION\n");
 			break;
