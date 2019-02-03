@@ -18,6 +18,7 @@ void push_free_list (int insert_index) {
 	if (insert_index % 3 ==0) {
 		set_next_index(insert_index, free_index);
 		set_prev_index(insert_index, -1);
+		set_prev_index(free_index, insert_index);
 		free_index = insert_index;
 	}
 	else

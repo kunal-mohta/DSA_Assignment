@@ -7,7 +7,7 @@ void defrag () {
 	index_arr_free_list(free_index_arr, &free_index_arr_len);
 
 	for (int k = 0; k < list_count; k++) {
-		if (lists_index_no[k] != -2) {
+		if (lists_index_no[k] != -2 && lists_index_no[k] != -1) {
 			int list_index_arr[main_list_len], list_index_arr_len;
 			index_arr_list(k, list_index_arr, &list_index_arr_len);
 
@@ -30,6 +30,7 @@ void defrag () {
 					int fl_index = free_index_arr[m];
 					int cl_index = combined_arr[m];
 					exchange_nodes(fl_index, cl_index, &free_index, &lists_index_no[k]);
+					free_index_arr[m] = combined_arr[m]; // update for the next list
 				}
 			}
 		}
