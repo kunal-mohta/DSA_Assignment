@@ -7,7 +7,7 @@ int count_total_elems () {
 	// TODO: total lists count handle
 	for (int i = 0; i < 5; i++) {
 		int start_index = lists_index_no[i];
-		if (start_index != -1) {
+		if (start_index != -2 && start_index != -1) {
 			int curr_index = start_index;
 			while (curr_index != -1) {
 				int x = get_next_index(curr_index);

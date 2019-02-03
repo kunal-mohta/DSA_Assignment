@@ -6,7 +6,7 @@ void display_all_lists () {
 	// TODO: max list count handle
 	for (int i = 0; i < 5; i++) {
 		int start_index = lists_index_no[i];
-		if (start_index != -1) {
+		if (start_index != -2) {
 			printf("\n\nElements of list-%d are:\n", i+1);
 			printf("key\tnext\tprev\n");
 			int curr_index = start_index;

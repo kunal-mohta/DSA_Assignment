@@ -55,7 +55,7 @@ void process_option (int option) {
 		case 3: printf("\nList you want to delete from: ");
 				int seq_no_delete;
 				scanf("%d", &seq_no_delete);
-				if (seq_no_insert <= LIST_COUNT && lists_index_no[seq_no_insert - 1] != -2) {
+				if (seq_no_delete <= LIST_COUNT && lists_index_no[seq_no_delete - 1] != -2) {
 					printf("\nEnter the key value: ");
 					int key_delete;
 					scanf("%d", &key_delete);
