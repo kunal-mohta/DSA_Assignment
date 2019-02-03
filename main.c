@@ -6,7 +6,7 @@ int main () {
 	int user_input = -1;
 	initialize_main_list();
 
-	while (user_input != 0 && user_input != 9) {
+	while (user_input != 0) {
 		display_options();
 		printf("Select an option: ");
 		scanf("%d", &user_input);

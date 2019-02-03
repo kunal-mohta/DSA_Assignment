@@ -4,7 +4,7 @@
 #include "free_list_functions.h"
 
 void insert_elem_in_list (int seq_no, int key) {
-	// TODO: validity check for seq_no
+	int seq_no_index = seq_no - 1;
 	int next_free_index = pop_free_list();
 	if (next_free_index != -1) {
 		set_key(next_free_index, key);
@@ -46,4 +46,6 @@ void insert_elem_in_list (int seq_no, int key) {
 
 		printf("\nSUCCESS\n");
 	}
+	else
+		printf("\nFAILURE: MEMORY NOT AVAILABLE");
 }
