@@ -46,7 +46,11 @@ void process_option (int option) {
 					printf("\nEnter the key value: ");
 					int key_insert;
 					scanf("%d", &key_insert);
-					insert_elem_in_list(seq_no_insert, key_insert);
+
+					if (lists_index_no[seq_no_insert-1] == -1)
+						create_new_list(seq_no_insert-1, key_insert);
+					else
+						insert_elem_in_list(seq_no_insert, key_insert);
 				}
 				else
 					printf("\nFAILURE: LIST NOT FOUND");
