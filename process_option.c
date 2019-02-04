@@ -2,8 +2,8 @@
 #include "execution_functions.h"
 #include "free_list_functions.h"
 
-#define MAIN_LIST_LEN 90
-#define LIST_COUNT 5
+#define MAIN_LIST_LEN 999
+#define LIST_COUNT 10
 
 // for external files
 int main_list_len = MAIN_LIST_LEN;
