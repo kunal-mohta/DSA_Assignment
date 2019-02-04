@@ -1,7 +1,6 @@
 src = $(wildcard *.c)
-obj = $(src:%.c=%.o)
 
-run_assignment: $(src) $(obj)
+run_assignment:
 	@echo "\nCOMPILING..."
 	@gcc $(src)
 	@echo "\nCOMPILED SUCCESSFULLY...\nEXECUTING PROGRAM..."
