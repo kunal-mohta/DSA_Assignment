@@ -3,9 +3,11 @@
 #include "main_list_functions.h"
 
 void display_all_lists () {
+	int no_created_lists = 1;
 	for (int i = 0; i < list_count; i++) {
 		int start_index = lists_index_no[i];
 		if (start_index != -2) {
+			no_created_lists = 0;
 			printf("\n\nElements of list-%d are:\n", i+1);
 			printf("key\tnext\tprev\n");
 			int curr_index = start_index;
@@ -25,4 +27,7 @@ void display_all_lists () {
 			}
 		}
 	}
+	// no lists created
+	if (no_created_lists)
+		printf("\nFAILURE: NO LISTS CREATED YET!\n");
 }
